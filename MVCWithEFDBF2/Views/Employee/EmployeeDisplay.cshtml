@@ -1,0 +1,46 @@
+﻿@model  IEnumerable<MVCWithEFDBF2.Models.Employee>
+    ViewBag.Title = "EmployeeDisplay";
+}
+
+<h2>EmployeeDisplay</h2>
+<table border="1" align="center">
+    <tr>
+        <th>@Html.DisplayNameFor(E => E.Eid)</th>
+        <th>@Html.DisplayNameFor(E => E.Ename)</th>
+        <th>@Html.DisplayNameFor(E => E.Job)</th>
+        <th>
+            @Html.DisplayNameFor(E => E.Salary)
+        </th>
+        <th>@Html.DisplayNameFor(E => E.Status)</th>
+        <th>@Html.DisplayNameFor(E => E.Did)</th>
+        <th>@Html.DisplayNameFor(E => E.Department.Dname)</th>
+        <th>@Html.DisplayNameFor(E => E.Department.Location)</th>
+    </tr>
+    @foreach (var employee in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(e => employee.Ename)
+            </td>
+            <td>@Html.DisplayFor(E => employee.Eid)</td>
+            <td>@Html.DisplayFor(E => employee.Ename)</td>
+            <td>@Html.DisplayFor(E => employee.Job)</td>
+            <td align="right">@Html.DisplayFor(E => employee.Salary)</td>
+            <td align="center">@Html.DisplayFor(E => employee.Status)</td>
+            <td align="center">@Html.DisplayFor(E => employee.Did)</td>
+            <td>@Html.DisplayFor(E => employee.Department.Dname)</td>
+            <td>@Html.DisplayFor(E => employee.Department.Location)</td>
+            <td>
+                @Html.ActionLink("Details", "DisplayEmployee", new { Eid = employee.Eid })
+                @Html.ActionLink("Edit", "EditEmployee", new { Eid = employee.Eid })
+                @Html.ActionLink("Delete", "DeleteEmployee", new { Eid = employee.Eid })
+            </td>
+        </tr>
+    }
+    <tr><td colspan="9" align="center">@Html.ActionLink("Add New Employee", "AddEmployee")</td></tr>
+</table>
+
+
+
+      
+

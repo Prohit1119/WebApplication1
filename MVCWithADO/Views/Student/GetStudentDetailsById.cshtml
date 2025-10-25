@@ -1,0 +1,18 @@
+﻿
+@model MVCWithADO.Models.Student
+
+<h2 style="text-align:center;background-color:yellowgreen;color:orangered">Student Details</h2>
+<table border="1" align="center">
+    <tr>
+        <td colspan="4"><img src="~/Upload/@Model.Photo" width="200" height="200 alt="No Image" /> </td>
+        <td>@Model.Sid</td>
+    </tr>
+    
+    <tr><td>Name: @Model.Name</td></tr>
+    <tr><td>Class: @Model.Class</td></tr>
+    <tr><td>Fees: @Model.Fees</td></tr>
+    <tr>
+        <td colspan="2" align="center">@Html.ActionLink("Back to List of StudentDetails","DisplayStudents")</td>
+    </tr>
+
+</table>

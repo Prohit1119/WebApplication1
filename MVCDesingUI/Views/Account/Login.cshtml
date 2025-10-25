@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div>
+    @using (Html.BeginForm("Validate", "Account"))
+    {
+
+        @Html.Label("User Name", new { @class = "text-info" });
+        @Html.TextBox("Username");
+        <br />
+        @Html.Label("Password", new { @class = "text-info" });
+        @Html.TextBox("Password");
+        <br />
+        <input type="submit" value="login" name="submit" />
+        <input type="reset" value="reset" name="cancel" />
+    }
+</div>
+

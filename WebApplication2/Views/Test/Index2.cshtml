@@ -1,0 +1,24 @@
+﻿@using WebApplication2.Models
+@model Product
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index2</h2>
+<table border="1" align="center" width="15%">
+    <caption>Product Details</caption>
+    <tr><td>Id: </td><td>@Model.Id</td></tr>
+    <tr><td>Name: </td> <td>@Model.Name</td></tr>
+    <tr>
+        <td>Price: </td>
+        <td>
+            @{
+                double Price = Convert.ToDouble(Model.Price);
+                Price = Price + (Price * 10 / 100);
+                @Price;
+            }
+        </td>
+        <td> <a href="/Test/Index">Link</a></td>
+    </tr>
+</table>
+

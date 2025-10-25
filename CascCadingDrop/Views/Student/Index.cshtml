@@ -1,0 +1,52 @@
+﻿@model CascCadingDrop.Models.Cities
+@{
+    ViewBag.Title = "Index";
+
+}
+<h2>Index</h2>
+<div>
+    <label>Cities</label>
+    @{
+        var student = ViewBag.Cities as List<CascCadingDrop.Models.Cities>;
+    }
+
+    <select id="CitiesDropDown" class="form-control">
+        <option value="">-- Select Country --</option>
+        @foreach (var c in student)
+        {
+            <option value="@c.CitieID">@c.CitieName</option>
+        }
+    </select>
+</div>
+<div>
+    <label>State</label>
+    <select id="StateDropDown" class="form-control">
+        <option value="">---Select State----</option>
+    </select>
+</div>
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        alert("Test")
+        $("#CitiesDropDown").change(function () {
+            
+            var countryId = $(this).val();
+            alert(countryId)
+            $("#StateDropDown").empty();
+            $("#StateDropDown").append('<option value="">---Select Value---</option>')
+            if (countryId) {
+                $.getJSON('/Student/GetStateName', { countryId: countryId }, function (data) {
+                    $.each(data, function (i, State) {
+                        $('#StateDropDown').append('<option value="' + State.StateID+  '">' + State.StateName + '</option>');
+                    });
+
+                });
+            }
+        });
+       
+    </script>
+    }
+
+
+
+

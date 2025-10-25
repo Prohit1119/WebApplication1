@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MVCAppUsingAjaxDet.Models.Product>
+@{
+    ViewBag.Title = "DisplayProduct";
+}
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1-14.1.js"></script>
+    <link href="~/Content/themes/ui-darkness/jquery.ui.theme.css" />
+    <script>
+        $(function () {
+            debugger;
+            alert("For testing");
+            $("SearchTerm").autocomplete({
+                source: '@Url.Action("GetProductDetails");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+
+        @using (Html.BeginForm("SearchProduct", "Product"))
+        {
+            <center>
+                <b>Product Name</b>
+                @Html.TextBox("SearchTerm")
+                <input type="submit" value="Search" id="btnSubmit" />
+            </center>
+        }
+
+    <table border="1" align="center">
+        <caption>Product Details</caption>
+        <tr>
+            <th>@Html.DisplayNameFor(P => P.ProductID)</th>
+            <th>@Html.DisplayNameFor(P => P.ProductName)</th>
+            <th>@Html.DisplayNameFor(P => P.CategoryID)</th>
+            <th>@Html.DisplayNameFor(P => P.UnitPrice)</th>
+            <th>@Html.DisplayNameFor(P => P.UnitsInStock)</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(x => item.ProductID)
+                </td>
+                <td>@Html.DisplayFor(P => item.ProductName)</td>
+                <td>@Html.DisplayFor(P => item.CategoryID)</td>
+                <td>@Html.DisplayFor(P => item.UnitPrice)</td>
+                <td>@Html.DisplayFor(P => item.UnitsInStock)</td>
+            </tr>
+
+           
+        }
+        </table>
+</div>
+    <h2>DisplayProduct</h2>
+</body>
+
+</html>
+

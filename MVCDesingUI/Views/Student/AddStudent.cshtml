@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "AddStudent";
+}
+
+<h2>AddStudent</h2>
+
+<div>
+    @{ Html.RenderPartial("_Header");}
+
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Student Id:") <br />
+    @Html.TextBox("Sid")<br />
+    @Html.Label("Name :")<br />
+    @Html.TextBox("Name")<br />
+    @Html.Label("Class")
+
+    List<int> lst = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    SelectList listitem = new SelectList(lst);
+
+    @Html.DropDownList("Class",listitem,"-select Class")<br />
+    @Html.Label("Gender")
+    @Html.RadioButton("Gender", "Male") @:Male
+    @Html.RadioButton("Gender","Female") @:Female<br />
+    @Html.Label("Fees")<br />
+    @Html.TextBox("Fees")
+    @Html.Label("Address:")<br />
+    @Html.TextArea("Address", "", 3, 21, new {})
+    <br /><br />
+    <input type="submit" value="Save" />
+    <input type="submit" value="Reset" />
+
+
+
+
+
+
+}

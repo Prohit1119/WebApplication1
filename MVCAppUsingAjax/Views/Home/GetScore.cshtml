@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetScore</title>
+    <script src="~/Scripts/jquery-3.7.1.min.js"></script>
+</head>
+<body onload="LoadData();">
+    <div style="background-color:lightgreen;color:blueviolet">
+        Date & Time: @DateTime.Now.ToString()
+    </div>
+    <div style="background-color:yellow;color:red">
+        <marquee id="m1" behavior="alternate"></marquee>
+    </div>
+    <div style="background-color:coral;color:chartreuse">
+        Date & Time: @DateTime.Now.ToString()
+    </div>
+    <script>
+        function LoadData() {
+            alert("Error Messags");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MVCDesingUI.Models.Customer>
+
+@{
+    ViewBag.Title = "DisplayCustomer";
+}
+
+<h2>DisplayCustomer</h2>
+@foreach (MVCDesingUI.Models.Customer customer in Model)
+{
+    Html.RenderPartial("_CustomerView",customer);
+}
+

@@ -1,0 +1,21 @@
+﻿@model WebApplication1.Models.Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<h2 style="text-align:center;background-color:yellowgreen;color:orangered">Add Student Details</h2>
+@using (Html.BeginForm("AddStudent", "Student", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>@Html.DisplayNameFor(s => s.Sid)<br />@Html.TextBoxFor(s => s.Sid)</div>
+    <div>@Html.DisplayNameFor(s => s.Name)<br />@Html.TextBoxFor(s => s.Name)</div>
+    <div>@Html.DisplayNameFor(s => s.Class)<br />@Html.TextBoxFor(s => s.Class)</div>
+    <div>@Html.DisplayNameFor(s => s.Fees)<br />@Html.TextBoxFor(s => s.Fees)</div>
+    <div>@Html.DisplayNameFor(s=>s.Photo) <br/><input type="file" name="SelectedFile" /></div>
+    <div>
+        <input type="submit" value="Save" />
+        <input type="reset" value="Reset" />
+    </div>
+}
+<div>@Html.ActionLink("Back to List of Students","DisplayStudents")</div>

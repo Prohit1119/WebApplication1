@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Site - Index";
+}
+<h2>This is the Home Page of Site.</h2>
+@Html.ActionLink("Doctor Home Page", "Index", "Home", new { area = "Doctor" }, null)
+<br />
+@Html.ActionLink("Patient Home Page", "Index", "Home", new { area = "Patient" }, null)
+<br />
+@Html.ActionLink("Staff Home Page", "Index", "Home", new { area = "Staff" }, null)
+
+

@@ -1,0 +1,31 @@
+﻿@model MVCWithEFCF1.Models.Category
+@{
+    ViewBag.Title = "AddCategory";
+}
+
+<h2>AddCategory</h2>
+<div>
+    @using (Html.BeginForm("AddCategory", "Category"))
+    {
+        <div>
+            @Html.LabelFor(C => C.CatId)
+        </div><br />
+        <div>@Html.TextBoxFor(C => C.CatId)</div>
+        <div>
+            @Html.LabelFor(C => C.CatName)
+        </div><br />
+        <div>@Html.TextBoxFor(C => C.CatName)</div>
+        <div>
+            @Html.LabelFor(C => C.CatDescripation)
+        </div><br />
+        <div>@Html.TextBoxFor(C => C.CatDescripation)</div>
+        <div>
+            <input type="submit" value="Submit" name="btnsubmit" />
+            <input type="reset"  value="Reset" name="btnreset"/>
+        </div>
+    }
+</div>
+<div>
+    @Html.ActionLink("Back to List Product", "DisplayCategory")
+</div>
+

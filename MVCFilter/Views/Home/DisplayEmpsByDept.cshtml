@@ -1,0 +1,34 @@
+﻿@model IEnumerable<MVCFilter.Models.Employee>
+@{
+    ViewBag.Title = "DisplayEmpsByDept";
+    Layout = null;
+}
+
+<h2>DisplayEmpsByDept</h2>
+<table align="center">
+    <tr>
+        <th>@Html.DisplayNameFor(E => E.Eid)</th>
+        <th>@Html.DisplayNameFor(E => E.Ename)</th>
+        <th>@Html.DisplayNameFor(E => E.Job)</th>
+        <th>@Html.DisplayNameFor(E => E.Salary)</th>
+        <th>@Html.DisplayNameFor(E => E.Status)</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(E=>item.Eid)
+            </td>
+            <td>
+                @Html.DisplayFor(E=>item.Ename)
+            </td>
+            <td>
+                @Html.DisplayFor(E=>item.Job)
+            </td>
+            <td align="right">@Html.DisplayFor(E=>item.Salary)</td>
+            <td align="center">@Html.CheckBoxFor(E=>item.Status)</td>
+        </tr>
+    }
+</table>
+

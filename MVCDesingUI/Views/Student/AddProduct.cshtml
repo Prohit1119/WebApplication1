@@ -1,0 +1,42 @@
+﻿
+@model MVCDesingUI.Models.Product
+
+@{
+    ViewBag.Title = "AddProduct";
+}
+<body>
+    <div>
+        @Html.Partial("_Header");
+    </div>
+</body>
+
+<h2>AddProduct</h2>
+@using (Html.BeginForm())
+{
+    @Html.Label("Product ID")
+    @Html.TextBoxFor(s => s.ProductID)
+    <br />
+    @Html.Label("Product Name")
+    @Html.TextBoxFor(s => s.ProcName)
+    <br />
+    @Html.Label("Country")
+    @Html.RadioButtonFor(s => s.ProdCountry, "India")@:India
+    @Html.RadioButtonFor(s => s.ProdCountry, "USA")@:USA <br />
+    @Html.Label("Product Class")
+    List<string> PClass = new List<string> { "Low", "Medium", "High", "Top High Class" };
+    SelectList lstselect = new SelectList(PClass);
+    @Html.DropDownListFor(s => s.ProductClass, lstselect);
+    <br />
+    @Html.Label("Product Price")
+    @Html.TextBoxFor(s => s.ProductPrice);
+    @Html.Label("Product Descripation");
+    @Html.TextAreaFor(s => s.ProcDescription, 3, 21, new { })
+    <br />
+    <br />
+    <input type="submit" value="Save" />
+    <input type="submit" value="Reset" />
+
+
+
+}
+

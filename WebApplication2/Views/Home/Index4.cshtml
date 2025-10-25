@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index4";
+}
+
+<h2>Index4</h2>
+@{ 
+    HttpCookie cookies = Request.Cookies["Details"];
+    <h1>@cookies["id"]</h1>
+}
+<h1> Link Goto Page<a href="Home/Index3">Link</a></h1>
+
+

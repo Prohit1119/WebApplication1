@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index3";
+}
+
+<h2>Index3</h2>
+
+<h1>
+    @ViewBag.id
+</h1>
+<h2>
+    @ViewBag.Name
+</h2>
+<h1>
+   @{ 
+       var pricedetails = Convert.ToDouble(TempData["price"]);
+       pricedetails = pricedetails / 10;
+       @pricedetails;
+   }
+   @{ 
+       HttpCookie cookies = Response.Cookies["Details"];
+      <h1>@cookies["Id"]</h1>
+   }
+
+
+</h1>

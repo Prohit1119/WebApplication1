@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Display</h2>
+@{ 
+	
+
+	foreach (var item in (List<String>)ViewData["Colors"])
+	{
+		<li>@item</li>
+	}
+}
+
+

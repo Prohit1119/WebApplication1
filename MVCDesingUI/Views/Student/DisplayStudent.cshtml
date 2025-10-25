@@ -1,0 +1,21 @@
+﻿
+@model MVCDesingUI.Models.Student
+
+@{
+    ViewBag.Title = "DisplayStudent";
+}
+
+<div>
+    @{Html.RenderAction("Header");}
+</div>
+<h2>DisplayStudent</h2>
+<ul>
+    <li>Student Id: @Model.Sid</li>
+    <li>Student Name: @Model.Name</li>
+    <li>Student Class: @Model.Class</li>
+    <li>Student Gender: @Model.Gender</li>
+    <li>Student Fees: @Model.Fees</li>
+    <li>Student Address: @Model.Address</li>
+</ul>
+
+
