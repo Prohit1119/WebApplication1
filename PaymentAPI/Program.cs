@@ -1,5 +1,5 @@
 using PaymentAPI.Interface;
-using SolidPrincipleProject.Service;
+using PaymentAPI.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 

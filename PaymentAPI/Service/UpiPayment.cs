@@ -1,6 +1,6 @@
 ﻿using PaymentAPI.Interface;
 
-namespace SolidPrincipleProject.Service
+namespace PaymentAPI.Service
 {
     public class UpiPayment : IPayment
     {
