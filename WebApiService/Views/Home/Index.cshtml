@@ -3,8 +3,9 @@
 </script>
 <script>
     function GetStudent() {
+        alert("hi");
         $.ajax({
-            url: "https://localhost:44335/Api/Student",
+            url: "/api/Student/",
             type: 'get',
             datatype: 'json',
             success: BuildTable,
@@ -18,7 +19,7 @@
             
             var status = (Student.status) ? 'Active' : 'In-Active';
             $('#tblStudent').append('<tr><td align=center>' + Student.Sid + '</td><td>' + Student.Name +
-                '</td><td align=right>' + Customer.Balance + '</td><td>' + Customer.City + '</td><td align=center>' + Status +
+                '</td><td align=right>' + Student.fees +  '</td><td align=center>' + Student.Status +
                 '</td></tr>');
 
         });

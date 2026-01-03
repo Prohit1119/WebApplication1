@@ -1,0 +1,6 @@
+@WebApiConsumer1Corss_HostAddress = http://localhost:5298
+
+GET {{WebApiConsumer1Corss_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

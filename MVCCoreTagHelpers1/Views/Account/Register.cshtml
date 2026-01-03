@@ -1,0 +1,15 @@
+﻿@model MVCCoreTagHelpers1.Models.Country
+<!DOCTYPE <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title> Registration Form</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        </head>
+    <body>
+   <img src="~/Register.jpg" class="card-img-top" asp-append-version="true">
+    </body>
+    <form method="get">
+        
+    <select asp-for="City" asp-items="Model.LstCity"></select>
+
+    </form>
+</html>

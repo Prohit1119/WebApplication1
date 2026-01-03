@@ -15,11 +15,12 @@ namespace MVCAppUsingAjaxDet.Models
     
     public partial class NotrWindEntities : DbContext
     {
-        public 56893
-            */0()
-            : base("name=NotrWindEntities")
+        public NotrWindEntities() : base("name=NotrWindEntities")
         {
+                
         }
+            
+        
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

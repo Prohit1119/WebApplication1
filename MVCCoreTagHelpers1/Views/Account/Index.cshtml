@@ -1,0 +1,33 @@
+﻿@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment Env
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!doctype html>
+<html>
+    <title> Index form</title>
+    <environment include="Development">
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.1/css/bootstrap.min.css
+          crossorigin="anonymous" referrerpolicy="no-referrer"
+          integrity="sha512-6KY5s6UI5J7SVYuZB4S/CZMyPylqyyNZco376NM2Z8Sb8OxEdp02e1jkKk/wZxIEmjQ6DRCEBhni+gpr9c4tvA==" />
+
+    </environment>
+    <head></head>
+    <body>
+    <h3>Click to navigate:</h3>
+    <a class="btn btn-primary" href="/Home/Index">Login</a>
+    @Html.ActionLink("Register", "Register", "Home", null, new { @class = "btn btn-primary" })
+    <a class="btn btn-primary" asp-controller="Home" asp-action="Privacy">About</a>
+    <br />
+    <br />
+    <strong>Support:</strong>
+    <email target-address="support@nareshit.com"></email>
+    <br />
+    <strong>Marketing:</strong>
+    <email mail-to="marketing" domain-name="nareshit.com"></email>
+    <br />
+    <strong>Sales:</strong>
+    <email mail-to="sales" domain-name="nareshit.com" inner-html="Sales"></email>
+    </body>
+
+</html>
